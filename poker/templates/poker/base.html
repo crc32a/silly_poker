@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+html {
+  font-family: arial;
+}
+
+.poker {
+  border: 1px solid #000000;
+  border-radius: 3px;
+  position: position: absolute;
+  top: 50%;
+  left: 50%;
+  width="80%";
+}
+
+.poker_cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-row-gap: 5px;
+  grid-column-gap: 5px;
+}
+
+.card {
+  
+  background-color: #ffffffff;
+  color: #000000;
+  border-radius: 3px;
+  border: 1px solid: #000000;
+  font-size: 4rem;
+  
+}
+
+.card:hover {
+  background-color: #cacaca;
+}
+</style>
+<!-- try to validate at http://validator.w3.org -->
+<title>{% block title %} Base Title {% endblock %}</title>
+</head>
+<body>
+{% block body %}{% endblock %}
+</body>
+</html>
