@@ -29,7 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+CARDS = conf["cards"]
+CARDS_NROWS = conf["cards_nrows"]
 # Application definition
 
 INSTALLED_APPS = [

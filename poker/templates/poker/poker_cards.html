@@ -3,16 +3,9 @@
 {% block body %}
   <div class="poker">
     <div class="poker_cards">
-      <button type="button" class="card" value="0">0</button>
-      <button type="button" class="card" value="1">1</button>
-      <button type="button" class="card" value="2">2</button>
-      <button type="button" class="card" value="3">3</button>
-      <button type="button" class="card" value="5">5</button>
-
-      <button type="button" class="card" value="8">8</button>
-      <button type="button" class="card" value="13">13</button>
-      <button type="button" class="card" value="20">20</button>
-      <button type="button" class="card" value="40">40</button>
+      {% for card in cards %}
+        <button type="button" class="card" value="{{ card.num }}">{{ card.num }}</button>
+      {% endfor %}
       <button type="button" class="card" value="break">☕</button>
     </div>
   </div>
