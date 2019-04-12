@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+import poker.views
+pview = poker.views.PokerView()
 
 urlpatterns = [
-    path("poker/", include("poker.urls")),
+    path("", pview.gview,{"view": "play_poker_view"}),
+    path("poker", pview.gview,{"view": "play_poker_view"}),
     path('admin/', admin.site.urls),
 ]

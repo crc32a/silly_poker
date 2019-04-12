@@ -3,6 +3,10 @@ import yaml
 import sys
 import os
 
+def printf(format,*args): sys.stdout.write(format%args)
+
+def fprintf(fp,format,*args): fp.write(format%args)
+
 def sha256passphrase(passphrase):
   return hashlib.sha256(passphrase.encode("utf-8")).digest()
 

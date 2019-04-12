@@ -5,6 +5,8 @@
 
 html {
   font-family: arial;
+  background-color: #303040;
+  color: #ffffff
 }
 
 .poker {
@@ -24,13 +26,11 @@ html {
 }
 
 .card {
-  
   background-color: #ffffffff;
   color: #000000;
   border-radius: 3px;
   border: 1px solid: #000000;
   font-size: 4rem;
-  
 }
 
 .card:hover {
@@ -41,6 +41,42 @@ html {
 <title>{% block title %} Base Title {% endblock %}</title>
 </head>
 <body>
+<table>
+  <tr>
+    <td>Logged in as: </td>
+{%if logged_in_as %}
+    <td style="color:green">{{ logged_in_as }}</td>
+{% else %}
+    <td style="color:red"> NO BODY</td>
+{% endif %}
+  </tr>
+</table>
+
+<form method="POST" action="/poker">
+  {% csrf_token %}
+  <table cellspacing="2" cellpadding="2" borders="1">
+    <tbody>
+      <tr>
+        <td>{{ login_form.name.label }}{{ login_form.form_name }}</td>
+        <td>{{ login_form.name }}</td>
+      </tr>
+      <tr>
+        <td>{{ login_form.project.label }}</td>
+        <td>{{ login_form.project }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tr>
+      <td><button type="submit" name="login" value="login">login</button></td>
+    </tr>
+  </table>
+</form>
+<form method="POST" action="/poker">
+  {% csrf_token %}
+  <button type="submit" name="logout" value="logout">logout</button>
+</form>
 {% block body %}{% endblock %}
+{% block errors %}{% endblock %}
 </body>
 </html>

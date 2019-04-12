@@ -3,8 +3,9 @@ PositiveIntegerField, ForeignKey, TextField, PROTECT, SET_NULL, CASCADE, \
 OneToOneField
 
 class Project(Model):
-    name = CharField(max_length=80, null=False)
-    topic = TextField(max_length=1024)
+    name = CharField(max_length=32, null=False)
+    topic = TextField(max_length=1024, null=True)
+    show_votes = BooleanField(null=False, default=True)
 
 class User(Model):
     name = CharField(max_length=32)
@@ -14,6 +15,4 @@ class User(Model):
 class ProjectOwner(Model):
     project = OneToOneField(Project, on_delete=CASCADE)
     user = OneToOneField(User, on_delete=CASCADE)
-    #project = ForeignKey(Project, on_delete=CASCADE, unique=True, null=False)
-    #user = ForeignKey(User, on_delete=CASCADE, unique=True, null=False)
 

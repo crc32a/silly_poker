@@ -4,7 +4,7 @@
   <div class="poker">
     <div class="poker_cards">
       {% for card in cards %}
-        <button type="button" class="card" value="{{ card.num }}">{{ card.num }}</button>
+        <button type="button" class="card" name="{{ card.num }}" value="{{ card.num }}">{{ card.num }}</button>
       {% endfor %}
       <button type="button" class="card" value="break">☕</button>
     </div>

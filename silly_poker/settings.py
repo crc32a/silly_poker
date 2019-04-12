@@ -28,6 +28,7 @@ SECRET_KEY = sha256passphrase(conf["secret_key"])
 DEBUG = True
 
 ALLOWED_HOSTS = []
+APPEND_SLASH=False
 
 CARDS = conf["cards"]
 CARDS_NROWS = conf["cards_nrows"]
